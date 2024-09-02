@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      HealthConnect Plugin
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">HealthConnect</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="ion-padding">
+    <strong>HealthConnect Plugin Example</strong>
+
+    <ion-button expand="block" (click)="checkAvailability()">
+      Connect Health Connect
+    </ion-button>
+
+    <ion-button expand="block" (click)="insertStepsRecord()" [disabled]="!permissionsGranted">
+      Insert Steps Record
+    </ion-button>
+
+    <ion-button expand="block" (click)="readStepsRecords()" [disabled]="!permissionsGranted">
+      Read Steps Records
+    </ion-button>
+
+    <ion-button expand="block" (click)="openSettings()">
+      Open Health Connect Settings
+    </ion-button>
+
+    <div *ngIf="message">
+      <p>{{ message }}</p>
+    </div>
+  </div>
+</ion-content>
